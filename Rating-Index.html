@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rating System</title>
+</head>
+<script type="text/javascript" src="JS/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="JS/bootstrap.js"></script>
+<link rel="stylesheet" href="CSS/bootstrap.css">
+<style type="text/css">
+    .rate_widget {
+        border: 1px solid #CCC;
+        overflow: visible;
+        padding: 10px;
+        position: relative;
+        width: 182px;
+        height: 32px;
+    }
+
+    .ratings_stars {
+        background: url('PICS/star_empty.png') no-repeat;
+        float: left;
+        height: 28px;
+        padding: 2px;
+        width: 32px;
+    }
+
+    .ratings_vote {
+        background: url('PICS/star_full.png') no-repeat;
+    }
+
+    .Doctors {
+        font: 10px verdana, sans-serif;
+        font-size: 15px;
+        font-family: cursive;
+        color: black;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.ratings_stars').bind('click', function() {
+            var star = this;
+            $(star).addClass('ratings_vote');
+        });
+    });
+</script>
+
+<body>
+    <form action="ratings.php">
+        <div class="container-fluid">
+            <div class='col-md-12'>
+                <div class="offset-5 Doctors">
+                    Rate: Doctors on the basis of your experience
+                    <div id="r1" class="rate_widget">
+                        <div class="ratings_stars" id="1"></div>
+                        <div class="ratings_stars" id="2"></div>
+                        <div class="ratings_stars" id="3"></div>
+                        <div class="ratings_stars" id="4"></div>
+                        <div class="ratings_stars" id="5"></div>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
